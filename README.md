@@ -814,11 +814,7 @@ Containerized Runtime
 
 This provides a foundation that can be extended into a production-style computer vision service.
 
-## License
 
-This project is intended for educational, portfolio, and demonstration purposes.
-
-If the repository is distributed publicly, add an appropriate open-source license such as the MIT License.
 
 ## Author
 
