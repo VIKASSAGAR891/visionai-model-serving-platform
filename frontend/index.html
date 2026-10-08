@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Recognition Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-text">VisionAI</span>
+            </div>
+            <nav class="nav">
+                <a href="#upload-section" class="nav-link active">Upload</a>
+                <a href="#history-section" class="nav-link">History</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="content-wrapper">
+            <!-- Upload Section -->
+            <section class="section" id="upload-section">
+                <div class="section-header">
+                    <h1 class="section-title">Image Recognition</h1>
+                    <p class="section-description">Upload an image to analyze and detect objects using advanced computer vision.</p>
+                </div>
+
+                <div class="card">
+                    <div class="upload-area">
+                        <label for="imageInput" class="upload-label">
+                            <div class="upload-placeholder">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p class="upload-text">Click to upload or drag and drop</p>
+                                <p class="upload-help">PNG, JPG, GIF up to 10MB</p>
+                            </div>
+                            <input type="file" id="imageInput" class="file-input" accept="image/*">
+                        </label>
+
+                        <div id="previewContainer" class="preview-section hidden">
+                            <div class="preview-image-wrapper">
+                                <img id="previewImage" class="preview-image" alt="Preview">
+                            </div>
+                            <div class="preview-meta">
+                                <div class="preview-filename">
+                                    <span class="label">File:</span>
+                                    <span id="filename" class="filename"></span>
+                                </div>
+                                <button type="button" class="btn btn-text" onclick="changeImage()">Change</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upload-actions">
+                        <button class="btn btn-primary" onclick="uploadImage()" id="predictBtn">Analyze Image</button>
+                        <button class="btn btn-secondary" onclick="clearPrediction()">Clear</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="section" id="results-section">
+                <div id="results" class="results-container"></div>
+            </section>
+
+            <!-- History Section -->
+            <section class="section" id="history-section">
+                <div class="section-header">
+                    <h2 class="section-title">Analysis History</h2>
+                    <p class="section-description">View your recent image analyses and predictions.</p>
+                </div>
+
+                <div class="card">
+                    <div class="table-actions">
+                        <button class="btn btn-secondary btn-sm" onclick="loadHistory()">Refresh</button>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>File</th>
+                                    <th>Prediction</th>
+                                    <th>Confidence</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyBody">
+                                <tr class="empty-row">
+                                    <td colspan="4">No analysis history yet. Upload an image to get started.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">&copy; 2026 Image Recognition Platform. Powered by YOLOv8.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Back to Top</a>
+               
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
